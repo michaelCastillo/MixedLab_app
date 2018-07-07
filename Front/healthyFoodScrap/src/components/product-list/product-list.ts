@@ -1,7 +1,7 @@
 
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { ProductPage } from '../../pages/product/product';
+//import { ProductPage } from '../../pages/product/product';
 
 @Component({
   selector: 'product-list',
@@ -31,13 +31,13 @@ export class ProductListComponent {
       });
     }
   }
-
+/*
   itemTapped(event, item) {
     // That's right, we're pushing to ourselves!
-    this.navCtrl.push(ProductPage, {
+    this.navCtrl.push(, {
       data: item,
     });
-  }
+  }*/
 }
 
 
