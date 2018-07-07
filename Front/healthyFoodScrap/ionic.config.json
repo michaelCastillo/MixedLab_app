@@ -1,0 +1,8 @@
+{
+  "name": "healthyFoodScrap",
+  "app_id": "67d674af",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
