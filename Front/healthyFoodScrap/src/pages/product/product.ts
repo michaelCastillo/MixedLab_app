@@ -14,8 +14,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'product.html',
 })
 export class ProductPage {
-
+  item: {name: string, pricesPerStore: Array<{prices: Number, store: string}>};
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.item = navParams.get('data');
   }
 
   ionViewDidLoad() {
