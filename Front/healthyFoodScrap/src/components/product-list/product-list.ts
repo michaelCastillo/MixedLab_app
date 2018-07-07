@@ -1,7 +1,7 @@
 
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-//import { ProductPage } from '../../pages/product/product';
+import { ProductPage } from '../../pages/product/product';
 
 @Component({
   selector: 'product-list',
@@ -20,24 +20,24 @@ export class ProductListComponent {
     this.products = [];
     // Let's populate this page with some filler content for funzies
     this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane','american-football', 'boat', 'bluetooth', 'build'];
-    var products = ["pera","manzana","ají","sal","azucar","te","pan","palta","tomate","lechuga"];
+    var products = ["tu","elfa","no","te","ama","te","pan","palta","tomate","lechuga"];
     var pricesPerStores_ = [{price:1000,store:"Jumbo"},{price:500,store:"Santa Isabel"},{price:1000,store:"Lider"}];
 
     this.items = [];
-    for (let i = 1; i < 11; i++) {
+    for (let i = 0; i < 11; i++) {
       this.items.push({
         name: products[i],
         pricesPerStore: pricesPerStores_,   
       });
     }
   }
-/*
+
   itemTapped(event, item) {
     // That's right, we're pushing to ourselves!
-    this.navCtrl.push(, {
-      data: item,
+    this.navCtrl.push(ProductPage, {
+      data: item
     });
-  }*/
+  }
 }
 
 
