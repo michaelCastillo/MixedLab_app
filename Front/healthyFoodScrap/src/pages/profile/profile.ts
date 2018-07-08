@@ -30,7 +30,7 @@ export class ProfilePage {
       heigth:['160'],
       weigth:['70'],
     });
-    this.toppings = ['Obesidad','Hipoglucemia'];
+    this.toppings = ['Diabetes'];
     this.name = this.formgroup.controls['name'];
     this.age = this.formgroup.controls['age'];
   }

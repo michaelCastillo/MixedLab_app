@@ -8,14 +8,22 @@ import { NavController,NavParams } from 'ionic-angular';
 })
 export class HomePage {
 
-  public name:string; 
-  public age:number; 
-  public conditions:Array<any>;
+  public name:string = "Rosa"; 
+  public age:number = 50; 
+  public conditions:Array<any> = ["Diabetes"];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    console.log(this.navParams.get('name')); 
-    console.log(this.navParams.get('age')); 
-    console.log(this.navParams.get('conditions')); 
+    
+    if(this.navParams.get('name')){
+      this.name = this.navParams.get('name');
+    }
+    if(this.navParams.get('age')){
+      this.age = this.navParams.get('age');
+    } 
+    if(this.navParams.get('conditions')){
+      this.conditions = this.navParams.get('conditions');
+    }
+    window.localStorage.setItem("productList",JSON.stringify(this.conditions));
   }
 
 }

@@ -46,12 +46,11 @@
     </form>
       <ion-item>
           <ion-label color="black" stacked>Condición</ion-label>
-          <ion-select [(ngModel)]="toppings" multiple="true">
+          <ion-select [(ngModel)]="toppings" multiple="false">
             <ion-option>Diabetes</ion-option>
-            <ion-option>Desnutrición</ion-option>
-            <ion-option>Obesidad</ion-option>
-            <ion-option>Anemia</ion-option>
-            <ion-option>Hipoglucemia</ion-option>
+            <ion-option>Hipertensión</ion-option>
+            <ion-option>Insuficiencia renal</ion-option>
+            <ion-option>Vegetariano</ion-option>
           </ion-select>
       </ion-item>
         <button clear ion-button (click)="updateProfile()"> Aceptar </button>
