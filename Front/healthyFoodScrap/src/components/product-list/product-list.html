@@ -9,10 +9,10 @@
 
                   
                 <ion-row>
-                  <ion-label class="labelName">Nombre: {{item.name}}</ion-label>
+                  <ion-label class="labelName">{{item.name}}</ion-label>
                 </ion-row>
                 <ion-row>
-                  <ion-label class="labelPrice">Precio de Referencia: {{item.pricesPerStore[0].price}}</ion-label>
+                  <ion-label class="labelPrice">${{item.pricesPerStore[0].price}}</ion-label>
                 </ion-row>
               </ion-card>
             </ion-col>

@@ -8,8 +8,8 @@
 
   <ion-navbar>
     <ion-title>
-            <button ion-button icon-only (click)="goHomePage()">
-                <ion-icon name="arrow-back"></ion-icon>
+            <button (click)="goHomePage()">
+                <ion-icon name="md-arrow-back"></ion-icon>
             </button>
       Perfil
     </ion-title>
@@ -21,31 +21,31 @@
     <form [formGroup]="formgroup">
         <ion-list>
           <ion-item>
-            <ion-label color="primary" stacked>Nombre</ion-label>
+            <ion-label color="black" stacked>Nombre</ion-label>
               <ion-input type="text" formControlName="name"></ion-input>
           </ion-item>
           <ion-item *ngIf="name.hasError('required') && name.touched">
             <p> *Nombre es requerido</p>
           </ion-item>
           <ion-item>
-            <ion-label color="primary" stacked>Edad</ion-label>
+            <ion-label color="black" stacked>Edad</ion-label>
             <ion-input type="number" formControlName="age"></ion-input>
           </ion-item>
           <ion-item *ngIf="age.hasError('required') && age.touched">
             <p> *Edad es requerido</p>
           </ion-item>
           <ion-item>
-            <ion-label color="primary" stacked>Estatura</ion-label>
+            <ion-label color="black" stacked>Estatura</ion-label>
             <ion-input type="number" formControlName="heigth"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label color="primary" stacked>Peso</ion-label>
+            <ion-label color="black" stacked>Peso</ion-label>
             <ion-input type="number" formControlName="weigth"></ion-input>
           </ion-item>
         </ion-list>
     </form>
       <ion-item>
-          <ion-label color="primary" stacked>Condición</ion-label>
+          <ion-label color="black" stacked>Condición</ion-label>
           <ion-select [(ngModel)]="toppings" multiple="true">
             <ion-option>Diabetes</ion-option>
             <ion-option>Desnutrición</ion-option>

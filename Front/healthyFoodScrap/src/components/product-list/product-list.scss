@@ -1,14 +1,15 @@
 product-list {
     .card-background-page {
       .labelName {
-        font-size: 0.9em;
+        font-size: 1em;
         font-weight: bold;        
-        color: blue;
+        color: rgba(103, 103, 119, 0.712);
+        margin-bottom: -10px;
       }
       .labelPrice {
-        font-size: 0.7em;
+        font-size: 0.8em;
         font-weight: bold;
-        color: red;
+        color: rgb(0, 0, 0);
       }
       .myImage{
         img{
