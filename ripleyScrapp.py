@@ -77,15 +77,14 @@ def scrappingJumbo(url):
     print(title)
     contenidoPrecio = list(content.find_all(class_='skuBestPrice'))[0].getText()
     precio = contenidoPrecio.strip("$ 00,").replace(".","")
-
+    contentImage = list(content.find_all(class_='image-zoom',href=True))[0]
+    urlImage = contentImage['href']
     archivo = open("temp.txt","w")
     archivo.write(title+"\n")
     archivo.write(precio+"\n")
-    archivo.write(url)
+    archivo.write(url+"\n")
+    archivo.write(urlImage)
     archivo.close()
-    response = title + " | " + precio
-    print(response)
-    return response
 
 
 def scrappFatSecret(palabrasString):
@@ -99,17 +98,29 @@ def scrappFatSecret(palabrasString):
         content = BeautifulSoup(page.content,'html.parser')
         products = list(content.find_all(class_='inner-link',href=True))
         for product in products:
-            print ("http://mobile.fatsecret.cl/calorías-nutrición"+product['href'])
-            
-    
+            urlProduct = "http://mobile.fatsecret.cl/calorías-nutrición"+product['href']
+            productPage = requests.get(urlProduct)
+            contentProduct = BeautifulSoup(productPage.content,'html.parser')
+            productsDetail = list(contentProduct.find_all(class_='borderTop'))
+            i = 0
+            nombres =[]
+            valores =[]
+            for productDetail in productsDetail:
+                if(i==0):
+                    print("Nombre: " +productDetail.getText())
+                    i=1
+                else:
+                    print("valor: " +productDetail.getText())
+                    i=0
+            #print (productsDetail)
 
 ##Main
 #url = input("Ingrese la url: ")
 
-print(sys.argv[1].split("_"))
-#print("scrap => " +str(scrappingJumbo(sys.argv[1])))
+#print(sys.argv[1].split("_"))
+print("scrap => " +str(scrappingJumbo(sys.argv[1])))
 
-scrappFatSecret(sys.argv[1])
+#scrappFatSecret(sys.argv[1])
 #palabras = ["pan","queso"]
 #scrappFatSecret(palabras)
 
