@@ -9,8 +9,7 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ProfilePage } from '../pages/profile/profile';
-import {IonTagsInputModule} from "ionic-tags-input";
-import { IonicStorageModule } from '@ionic/storage';
+
 
 @NgModule({
   declarations: [
@@ -22,8 +21,6 @@ import { IonicStorageModule } from '@ionic/storage';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonTagsInputModule,
-    IonicStorageModule.forRoot(),
     
   ],
   bootstrap: [IonicApp],
@@ -31,7 +28,7 @@ import { IonicStorageModule } from '@ionic/storage';
     MyApp,
     HomePage,
     ListPage,
-    ProfilePage
+    ProfilePage,
   ],
   providers: [
     StatusBar,

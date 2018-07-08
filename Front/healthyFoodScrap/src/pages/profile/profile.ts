@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { Storage } from '@ionic/storage'
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators, AbstractControl} from '@angular/forms'
+import { HomePage } from '../home/home';
+
 /**
  * Generated class for the ProfilePage page.
  *
@@ -9,7 +10,6 @@ import {FormBuilder, FormGroup, Validators, AbstractControl} from '@angular/form
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-profile',
   templateUrl: 'profile.html',
@@ -19,13 +19,10 @@ export class ProfilePage {
   formgroup:FormGroup;
   name:AbstractControl;
   age:AbstractControl;
-
-  itemsArray: Array<any> = ["Alergia","Vegetariano","Celiaco","Obesidad"];
-  selectedItems: Array<any> = ["Alergia","Celiaco"];
+  toppings: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  public formbuilder:FormBuilder, private storage: Storage,
-  public alertCtrl: AlertController) {
+  public formbuilder:FormBuilder) {
 
     this.formgroup = formbuilder.group({
       name:['Rosa',Validators.required],
@@ -33,7 +30,7 @@ export class ProfilePage {
       heigth:['160'],
       weigth:['70'],
     });
-
+    this.toppings = ['Obesidad','Hipoglucemia'];
     this.name = this.formgroup.controls['name'];
     this.age = this.formgroup.controls['age'];
   }
@@ -42,19 +39,13 @@ export class ProfilePage {
     console.log('ionViewDidLoad ProfilePage');
   }
 
-  onChange(val){
-    //console.log(this.conditions)
+  goHomePage(){
+    this.navCtrl.push(HomePage, {name:this.name.value, age:this.age.value, conditions:this.toppings});
   }
 
-  setData(){
-    console.log(this.formgroup.value['name']);
-    console.log(this.formgroup.value['age']);
-    console.log(this.formgroup.value['heigth']);
-    console.log(this.formgroup.value['weigth']);
-    //console.log(this.conditions);
-    alert("Datos Actualizados");
+  updateProfile(){
+    alert("Perfil actualizado");
+    this.navCtrl.push(HomePage, {name:this.name.value, age:this.age.value, conditions:this.toppings});
   }
-
-  
 
 }
