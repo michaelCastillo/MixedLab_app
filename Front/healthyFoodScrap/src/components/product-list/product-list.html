@@ -4,7 +4,10 @@
       <ion-row>
             <ion-col *ngFor="let item of items" (click)="itemTapped($event, item)" col-6>
 
+
+
                       <ion-card color="primary">
+
                     <img src="https://loremflickr.com/140/140/food">
 
                   
@@ -12,7 +15,7 @@
                   <ion-label class="labelName">{{item.name}}</ion-label>
                 </ion-row>
                 <ion-row>
-                  <ion-label class="labelPrice">${{item.pricesPerStore[0].price}}</ion-label>
+                  <ion-label class="labelPrice">${{item.pricesPerStore.price}}</ion-label>
                 </ion-row>
               </ion-card>
             </ion-col>

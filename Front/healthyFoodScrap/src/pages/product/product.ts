@@ -14,7 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'product.html',
 })
 export class ProductPage {
-
+  storeTapedUrl: string;
   //Chart de barras
   public barChartOptions:any = {
     scaleShowVerticalLines: false,
@@ -82,6 +82,10 @@ export class ProductPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.item = navParams.get('data');
 
+  }
+  storeTapped($event, store){
+    this.storeTapedUrl = store.url;
+    window.open(this.storeTapedUrl);
   }
 
   ionViewDidLoad() {

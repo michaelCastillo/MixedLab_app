@@ -33,7 +33,7 @@
         </ion-row>
 
           <ion-row>
-          <ion-col *ngFor="let tupla of item.pricesPerStore" (click)="storeTapped($event, tupla.store)">
+          <ion-col *ngFor="let tupla of item.pricesPerStore" (click)="storeTapped($event, tupla)">
             <ion-list>
               <ion-item>
                 {{tupla.store}}
