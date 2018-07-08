@@ -1,19 +1,23 @@
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
+  <ion-header color="navbarColor" >
+    <ion-toolbar class="menu" color="primary" width="10">
+      <ion-title>
+          <img src="../assets/imgs/manzana-logo.png" class="manzana" style="margin-top:30px" height="70" width="70">
+      </ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
-    </ion-list>
-  </ion-content>
+  
+  
+    <ion-content>
+      <ion-list style="margin-left: 18px; margin-top: 8px;">
+        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          <p style="font-weight: bold; font-size:16px; ">{{p.title}}</p>
+        </button>
+      </ion-list>
+    </ion-content>
+  
 
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav  [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

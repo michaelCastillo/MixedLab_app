@@ -1,0 +1,25 @@
+<ion-content class="card-background-page">
+  <ion-list>
+    <ion-grid>
+      <ion-row>
+            <ion-col *ngFor="let item of items" (click)="itemTapped($event, item)" col-6>
+
+                      <ion-card color="primary">
+                    <img src="https://loremflickr.com/140/140/food">
+
+                  
+                <ion-row>
+                  <ion-label class="labelName">{{item.name}}</ion-label>
+                </ion-row>
+                <ion-row>
+                  <ion-label class="labelPrice">${{item.pricesPerStore[0].price}}</ion-label>
+                </ion-row>
+              </ion-card>
+            </ion-col>
+ 
+
+      </ion-row>
+    </ion-grid>
+
+  </ion-list>
+</ion-content>
