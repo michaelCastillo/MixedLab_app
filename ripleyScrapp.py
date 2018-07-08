@@ -1,6 +1,7 @@
 
 from bs4 import BeautifulSoup
 import requests
+import sys
 
 def scrapping(url):
     page = requests.get(url)
@@ -77,11 +78,14 @@ def scrappingJumbo(url):
     contenidoPrecio = list(content.find_all(class_='skuBestPrice'))[0].getText()
     precio = contenidoPrecio.strip("$ 00,").replace(".","")
     response = title + " | " + precio
+    print(response)
     return response
 
 
-def scrappFatSecret(palabras):
+def scrappFatSecret(palabrasString):
+    palabras = palabrasString.split("_")
     for palabra in palabras:
+        print(palabra)
         url = "http://mobile.fatsecret.cl/calorías-nutrición/search?q="+palabra
         page = requests.get(url)
         content = BeautifulSoup(page.content,'html.parser')
@@ -91,11 +95,12 @@ def scrappFatSecret(palabras):
     
 
 ##Main
-url = input("Ingrese la url: ")
+#url = input("Ingrese la url: ")
 
 
-print("scrap => " +str(scrappingJumbo(url)))
+print("scrap => " +str(scrappingJumbo(sys.argv[1])))
 
+#scrappFatSecret(sys.argv[1])
 #palabras = ["pan","queso"]
 #scrappFatSecret(palabras)
 
