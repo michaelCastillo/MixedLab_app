@@ -1,14 +1,23 @@
 product-list {
     .card-background-page {
       .labelName {
-        font-size: 0.8em;
+        font-size: 1em;
         font-weight: bold;        
         color: blue;
       }
       .labelPrice {
-        font-size: 1em;
+        font-size: 1.1em;
         font-weight: bold;
         color: red;
+      }
+      .myImage{
+        img{
+          height: auto !important;
+        width: auto !important;
+        align-items: center;
+
+      }
+        
       }
         ion-card {
           position: relative;

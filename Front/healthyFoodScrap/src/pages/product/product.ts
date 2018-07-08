@@ -14,6 +14,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'product.html',
 })
 export class ProductPage {
+
+  //Chart de barras
+  public barChartOptions:any = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
+
+
+
   public lineChartData:Array<any> = [
     {data: [65, 59, 80, 81, 56, 55, 40], label: 'Precio/Mes'},
   ];
@@ -72,6 +81,7 @@ export class ProductPage {
   item: {name: string, pricesPerStore: Array<{prices: Number, store: string}>};
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.item = navParams.get('data');
+
   }
 
   ionViewDidLoad() {
