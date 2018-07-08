@@ -77,6 +77,11 @@ def scrappingJumbo(url):
     print(title)
     contenidoPrecio = list(content.find_all(class_='skuBestPrice'))[0].getText()
     precio = contenidoPrecio.strip("$ 00,").replace(".","")
+
+    archivo = open("temp.txt","w")
+    archivo.write(title+"\n")
+    archivo.write(precio)
+    archivo.close()
     response = title + " | " + precio
     print(response)
     return response
@@ -84,20 +89,22 @@ def scrappingJumbo(url):
 
 def scrappFatSecret(palabrasString):
     palabras = palabrasString.split("_")
+    print(palabras)
     for palabra in palabras:
         print(palabra)
         url = "http://mobile.fatsecret.cl/calorías-nutrición/search?q="+palabra
+        print (url)
         page = requests.get(url)
         content = BeautifulSoup(page.content,'html.parser')
-        products = list(content.find_all(class_='next-link'))
+        products = list(content.find_all(class_='next-link',href=True))
         for product in products:
-            print (product)
+            print (product['href'])
     
 
 ##Main
 #url = input("Ingrese la url: ")
 
-
+print(sys.argv[1].split("_"))
 print("scrap => " +str(scrappingJumbo(sys.argv[1])))
 
 #scrappFatSecret(sys.argv[1])
