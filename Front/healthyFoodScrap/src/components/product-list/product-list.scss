@@ -1,6 +1,15 @@
 product-list {
     .card-background-page {
-
+      .labelName {
+        font-size: 0.8em;
+        font-weight: bold;        
+        color: blue;
+      }
+      .labelPrice {
+        font-size: 1em;
+        font-weight: bold;
+        color: red;
+      }
         ion-card {
           position: relative;
           text-align: center;
@@ -8,7 +17,8 @@ product-list {
       
         .card-title {
           position: absolute;
-          top: 36%;
+          top: 70%;
+          background: snow;
           font-size: 2.0em;
           width: 100%;
           font-weight: bold;
@@ -18,7 +28,8 @@ product-list {
         .card-subtitle {
           font-size: 1.0em;
           position: absolute;
-          top: 52%;
+          top: 90%;
+          background: snow;
           width: 100%;
           color: #000000;
         }

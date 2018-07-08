@@ -2,17 +2,31 @@
   <ion-list>
     <ion-grid>
       <ion-row>
-        <ion-col *ngFor="let item of items" (click)="itemTapped($event, item)" col-6>
-        <ion-card>
+        <ion-slides pager>
+          <ion-slide *ngFor="let slide of slides">
+            <ion-col *ngFor="let item of slide" (click)="itemTapped($event, item)">
+              <ion-card>
+                <ion-row>
+                  <ion-col col-3>
+                    </ion-col>
+                  
+                  <ion-col col-9>
+                    <img src="https://loremflickr.com/140/140/food">
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-label class="labelName">Nombre: {{item[0].name}}</ion-label>
+                </ion-row>
+                <ion-row>
+                  <ion-label class="labelPrice">Precio de Referencia: {{item[0].pricesPerStore[0].price}}</ion-label>
+                </ion-row>
+              </ion-card>
+            </ion-col>
+          </ion-slide>
+        </ion-slides>
 
-            <img src="data:image/jpeg;base64,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">
-            <div class="card-title">{{item.name}}</div>
-            <div class="card-subtitle">{{item.pricesPerStore[0].price}}</div>
-          </ion-card>
-        </ion-col>
       </ion-row>
     </ion-grid>
-    
+
   </ion-list>
 </ion-content>
-
