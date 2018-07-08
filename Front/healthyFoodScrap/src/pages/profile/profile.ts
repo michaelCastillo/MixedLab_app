@@ -47,7 +47,7 @@ export class ProfilePage {
   updateProfile(){
     alert("Perfil actualizado");
    // this.navCtrl.push(HomePage, {name:this.name.value, age:this.age.value, conditions:this.toppings});
-   this.navCtrl.setRoot(HomePage, {name:this.name.value, age:this.age.value, conditions:this.toppings});
+    this.navCtrl.setRoot(HomePage, {name:this.name.value, age:this.age.value, conditions:this.toppings});
 
   }
 
